@@ -26,11 +26,10 @@ class wpcspc_commands extends WP_CLI_Command {
 
 		if($results) {
 			foreach( $results as $post ) {
-				WP_CLI::line( 'Publishing post ID: ' . $post->ID);
-				wp_publish_post($post->ID);
+				WP_CLI::line( 'Scheduled post ID: ' . $post->ID);
 			}
 		} else {
-			WP_CLI::line( 'No posts found to publish' );
+			WP_CLI::line( 'No posts are scheduled.' );
 		}
 
 	}
